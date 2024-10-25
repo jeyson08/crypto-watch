@@ -61,12 +61,14 @@ header {
         align-items: center;
         justify-content: center;
         background: -webkit-linear-gradient(360deg, $color1, #0debc6);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         height: 36px;
 
         @media screen and (max-width: 1150px) {
           transform: translateY(-6px);
+          font-size: 1rem;
         }
 
         img {

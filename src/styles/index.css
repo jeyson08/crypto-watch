@@ -568,6 +568,7 @@ header .header-container .title h1 {
       -ms-flex-pack: center;
           justify-content: center;
   background: -webkit-linear-gradient(360deg, #00b7b3, #0debc6);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   height: 36px;
@@ -576,6 +577,7 @@ header .header-container .title h1 {
   header .header-container .title h1 {
     -webkit-transform: translateY(-6px);
             transform: translateY(-6px);
+    font-size: 1rem;
   }
 }
 header .header-container .title h1 img {
