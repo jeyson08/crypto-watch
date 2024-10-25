@@ -386,12 +386,13 @@ label {
 .table-container .table-line .infos-container .infos h4 {
   margin-left: 6px;
   letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
 }
 @media screen and (max-width: 1150px) {
   .table-container .table-line .infos-container .infos h4 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     max-width: 70px;
   }
 }
