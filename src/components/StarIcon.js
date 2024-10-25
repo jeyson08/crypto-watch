@@ -4,35 +4,29 @@ const StarIcon = ({ coinId }) => {
   const [like, setLike] = useState(false);
 
   useEffect(() => {
-    if (window.localStorage.coinList) {
-      let favList = window.localStorage.coinList.split(",");
-      if (favList.includes(coinId)) {
-        setLike(true);
-      } else {
-        setLike(false);
-      }
+    const storedCoinList = window.localStorage.getItem("coinList");
+    if (storedCoinList) {
+      const favList = storedCoinList.split(",");
+      setLike(favList.includes(coinId));
     }
   }, [coinId]);
 
   const idChecker = (id) => {
-    let favList = null;
+    const storedCoinList = window.localStorage.getItem("coinList");
+    let favList = storedCoinList ? storedCoinList.split(",") : [];
 
-    if (window.localStorage.coinList) {
-      favList = window.localStorage.coinList.split(",");
-    }
-
-    if (favList) {
-      if (favList.includes(id)) {
-        window.localStorage.coinList = favList.filter((coin) => coin !== id);
-        setLike(false);
-      } else {
-        window.localStorage.coinList = [...favList, coinId];
-        setLike(true);
-      }
+    if (favList.includes(id)) {
+      // Remove coin from favorites
+      favList = favList.filter((coin) => coin !== id);
+      setLike(false);
     } else {
-      window.localStorage.coinList = coinId;
+      // Add coin to favorites
+      favList.push(id);
       setLike(true);
     }
+
+    // Update localStorage with the modified list
+    window.localStorage.setItem("coinList", favList.join(","));
   };
 
   return (
