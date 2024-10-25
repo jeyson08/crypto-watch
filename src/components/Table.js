@@ -69,24 +69,19 @@ const Table = ({ coinsData }) => {
           .slice(0, rangeNumber)
           .filter((coin) => {
             if (showStable) {
-              return coin;
+              return true; // Inclut tous les éléments si showStable est true
             } else {
-              if (isStableCoin(coin.symbol)) {
-                return coin;
-              }
+              return isStableCoin(coin.symbol); // Retourne true ou false en fonction de isStableCoin
             }
           })
           .filter((coin) => {
             if (showFavList) {
-              // Utilisation sécurisée de coinList
               const coinList = window.localStorage.getItem("coinList");
               const list = coinList ? coinList.split(",") : []; // Initialise list comme un tableau vide si coinList est null
 
-              if (list.includes(coin.id)) {
-                return coin;
-              }
+              return list.includes(coin.id); // Retourne true si l'ID de la pièce est dans la liste
             } else {
-              return coin;
+              return true; // Retourne true pour inclure tous les éléments si showFavList est false
             }
           })
           .sort((a, b) => {
