@@ -510,6 +510,7 @@ header .header-container {
   grid-template-rows: 132px 1fr;
   grid-template-areas: "a b" "c c";
   padding-right: 10px;
+  padding-left: 10px;
 }
 header .header-container .title,
 header .header-container .infos-mkt {
