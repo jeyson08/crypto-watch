@@ -33,7 +33,7 @@ const TableLine = ({ coin, index }) => {
         <div className="infos">
           <div
             className="chart-img"
-            onMouseEnter={() => setShowChart(true)}
+            onMouseEnter={() => setShowChart(false)} // montre les données, mettre sur true si utilisé
             onMouseLeave={() => setShowChart(false)}
           >
             <img src="./assets/chart-icon.svg" alt="chart-icon" />

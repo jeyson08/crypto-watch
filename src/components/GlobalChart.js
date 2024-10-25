@@ -39,9 +39,10 @@ const GlobalChart = ({ coinsData }) => {
   useEffect(() => {
     let chartData = [];
 
-    if (coinsData.length > 0) {
-      for (let i = 0; i < 45; i++) {
-        if (excludeCoin(coinsData[i].symbol)) {
+    if (coinsData && coinsData.length > 0) {
+      for (let i = 0; i < 45 && i < coinsData.length; i++) {
+        // Limite à la longueur de coinsData
+        if (coinsData[i] && excludeCoin(coinsData[i].symbol)) {
           chartData.push({
             name:
               coinsData[i].symbol.toUpperCase() +
