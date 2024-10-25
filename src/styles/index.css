@@ -387,6 +387,13 @@ label {
   margin-left: 6px;
   letter-spacing: 1px;
 }
+@media screen and (max-width: 1150px) {
+  .table-container .table-line .infos-container .infos h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70px;
+  }
+}
 .table-container .table-line .infos-container .infos span {
   color: rgb(172, 172, 172);
   margin: 3px 2px 0 5px;

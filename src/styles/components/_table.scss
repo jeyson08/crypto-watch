@@ -243,6 +243,12 @@
         h4 {
           margin-left: 6px;
           letter-spacing: 1px;
+
+          @media screen and (max-width: 1150px) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 70px;
+          }
         }
         span {
           color: $white2;
