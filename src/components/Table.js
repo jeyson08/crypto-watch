@@ -78,7 +78,10 @@ const Table = ({ coinsData }) => {
           })
           .filter((coin) => {
             if (showFavList) {
-              let list = window.localStorage.coinList.split(",");
+              // Utilisation sécurisée de coinList
+              const coinList = window.localStorage.getItem("coinList");
+              const list = coinList ? coinList.split(",") : []; // Initialise list comme un tableau vide si coinList est null
+
               if (list.includes(coin.id)) {
                 return coin;
               }
