@@ -94,6 +94,11 @@ label {
   text-align: center;
   color: rgb(219, 217, 217) !important;
 }
+@media screen and (max-width: 1150px) {
+  .table-container {
+    padding-right: 10px;
+  }
+}
 .table-container .table-header,
 .table-container .table-line {
   display: grid;

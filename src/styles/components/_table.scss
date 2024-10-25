@@ -2,6 +2,10 @@
   text-align: center;
   color: $white1 !important;
 
+  @media screen and (max-width: 1150px) {
+    padding-right: 10px;
+  }
+
   .table-header,
   .table-line {
     display: grid;
