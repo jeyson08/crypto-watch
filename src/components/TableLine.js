@@ -41,7 +41,7 @@ const TableLine = ({ coin, index }) => {
               {showChart && <CoinChart coinId={coin.id} coinName={coin.name} />}
             </div>
           </div>
-          <h4>{coin.name}</h4>
+          <h4 title={coin.name}>{coin.name}</h4>
           <span>- {coin.symbol.toUpperCase()}</span>
           <a
             target="_blank"
